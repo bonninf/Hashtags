@@ -19,7 +19,7 @@ class ExampleUsingCode: UIViewController {
    
     struct Constants {
         static let minCharsForInput = 3
-        static let maxCharsForInput = 30
+        static let maxCharsForInput = 300
     }
     
     lazy var hashtags: HashtagView = {
@@ -89,13 +89,28 @@ class ExampleUsingCode: UIViewController {
         
         self.input.addTarget(self, action: Selector.onEditingChanged, for: .editingChanged)
         self.addButton.addTarget(self, action: Selector.onAddHashtag, for: .touchUpInside)
-        self.hashtags.addTag(tag: HashTag(word: "hashtag", isRemovable: true))
-        
+
         let tags = [HashTag(word: "this"),
                     HashTag(word: "is", isRemovable: false),
                     HashTag(word: "another", isRemovable: true),
-                    HashTag(word: "example", isRemovable: true)]
+                    HashTag(word: "example", isRemovable: true),
+                    HashTag(word: "exampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexampleexample", isRemovable: true)
+        ]
         
+        self.hashtags.containerPaddingTop = 0
+        self.hashtags.containerPaddingLeft = 0
+        self.hashtags.containerPaddingRight = 0
+        self.hashtags.containerPaddingBottom = 0
+        self.hashtags.removeButtonSize = 10
+        self.hashtags.removeButtonSpacing = 10
+        self.hashtags.tagBackgroundColor = UIColor.red
+        self.hashtags.tagTextColor = UIColor.black
+        self.hashtags.tagCornerRadius = 12.0
+        self.hashtags.horizontalTagSpacing = 10.0
+        self.hashtags.verticalTagSpacing = 10.0
+        self.hashtags.textSize = 12.0
+        self.hashtags.borderColor = UIColor.darkGray
+        self.hashtags.borderWidth = 1
         self.hashtags.addTags(tags: tags)
     }
     

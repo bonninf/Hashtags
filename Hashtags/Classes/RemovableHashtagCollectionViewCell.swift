@@ -79,7 +79,7 @@ open class RemovableHashtagCollectionViewCell: UICollectionViewCell {
         // Padding bottom
         self.paddingBottomConstraint = self.wordLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         self.paddingBottomConstraint!.isActive = true
-        // Remove button right
+        // Pdding right
         self.paddingRightConstraint = self.removeButton.rightAnchor.constraint(equalTo: self.rightAnchor)
         self.paddingRightConstraint!.isActive = true
         // Remove button spacing
@@ -119,6 +119,7 @@ extension RemovableHashtagCollectionViewCell {
         self.paddingLeftConstraint!.constant = configuration.paddingLeft
         self.paddingTopConstraint!.constant = configuration.paddingTop
         self.paddingBottomConstraint!.constant = -1 * configuration.paddingBottom
+        self.paddingRightConstraint!.constant = -1 * configuration.paddingRight
         self.removeButtonSpacingConstraint!.constant = configuration.removeButtonSpacing
         self.removeButtonWidthConstraint!.constant = configuration.removeButtonSize
         
