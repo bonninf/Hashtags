@@ -10,7 +10,7 @@ import Foundation
 
 extension Array where Element: Equatable {
     @discardableResult mutating func remove(object: Element) -> Bool {
-        if let index = index(of: object) {
+        if let index = firstIndex(of: object) {
             self.remove(at: index)
             return true
         }
@@ -18,7 +18,7 @@ extension Array where Element: Equatable {
     }
     
     @discardableResult mutating func remove(where predicate: (Array.Iterator.Element) -> Bool) -> Bool {
-        if let index = self.index(where: { (element) -> Bool in
+        if let index = self.firstIndex(where: { (element) -> Bool in
             return predicate(element)
         }) {
             self.remove(at: index)

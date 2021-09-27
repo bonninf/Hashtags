@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Hashtags'
-  s.version          = '0.1.3'
+  s.version          = '2.0.0'
   s.summary          = 'A swift library for displaying hashtags'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
   s.description      = "Display a list of hashtags dynamically."
   s.homepage         = 'https://github.com/scaraux/Hashtags'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/scaraux/Hashtags.git', :tag => s.version.to_s }
 
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'Hashtags/Classes/**/*'
 
