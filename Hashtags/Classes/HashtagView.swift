@@ -370,6 +370,10 @@ extension HashtagView: UICollectionViewDelegateFlowLayout {
         if hashtag.isRemovable {
             calculatedWidth += self.removeButtonSize + self.removeButtonSpacing
         }
+        let maxSize = collectionView.bounds.width - (containerPaddingRight + containerPaddingLeft)
+        if calculatedWidth > maxSize {
+            calculatedWidth = maxSize
+        }
         return CGSize(width: calculatedWidth, height: calculatedHeight)
     }
 }

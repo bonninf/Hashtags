@@ -13,7 +13,7 @@ fileprivate extension Selector {
     static let removeButtonClicked: Selector = #selector(RemovableHashtagCollectionViewCell.onRemoveButtonClicked(_:))
 }
 
-public protocol RemovableHashtagDelegate: class {
+public protocol RemovableHashtagDelegate: AnyObject {
     func onRemoveHashtag(hashtag: HashTag)
 }
 
@@ -79,6 +79,9 @@ open class RemovableHashtagCollectionViewCell: UICollectionViewCell {
         // Padding bottom
         self.paddingBottomConstraint = self.wordLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         self.paddingBottomConstraint!.isActive = true
+        // Remove button right
+        self.paddingRightConstraint = self.removeButton.rightAnchor.constraint(equalTo: self.rightAnchor)
+        self.paddingRightConstraint!.isActive = true
         // Remove button spacing
         self.removeButtonSpacingConstraint = self.removeButton.leadingAnchor.constraint(equalTo: self.wordLabel.trailingAnchor)
         self.removeButtonSpacingConstraint!.isActive = true
