@@ -103,6 +103,8 @@ class ExampleUsingCode: UIViewController {
         self.hashtags.containerPaddingBottom = 0
         self.hashtags.removeButtonSize = 10
         self.hashtags.removeButtonSpacing = 10
+        //Customize the color of the remove button
+        self.hashtags.removeButtonTintColor = .yellow
         self.hashtags.tagBackgroundColor = UIColor.red
         self.hashtags.tagTextColor = UIColor.black
         self.hashtags.tagCornerRadius = 12.0

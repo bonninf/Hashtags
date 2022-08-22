@@ -152,7 +152,13 @@ open class HashtagView: UIView {
             self.collectionView.reloadData()
         }
     }
-    
+    @IBInspectable
+    open var removeButtonTintColor: UIColor = .black {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+
     // MARK: Hashtags cell margins
     
     @IBInspectable
@@ -222,6 +228,7 @@ open class HashtagView: UIView {
         configuration.paddingBottom = self.tagPaddingBottom
         configuration.removeButtonSize = self.removeButtonSize
         configuration.removeButtonSpacing = self.removeButtonSpacing
+        configuration.removeButtonTintColor = self.removeButtonTintColor
         configuration.backgroundColor = self.tagBackgroundColor
         configuration.cornerRadius = self.tagCornerRadius
         configuration.textSize = self.textSize

@@ -123,6 +123,13 @@ extension RemovableHashtagCollectionViewCell {
         self.removeButtonSpacingConstraint!.constant = configuration.removeButtonSpacing
         self.removeButtonWidthConstraint!.constant = configuration.removeButtonSize
         
+        //Customize the button color
+        if #available(iOS 13.0, *) {
+            if let buttonImage = removeButton.imageView?.image {
+                removeButton.imageView?.image = buttonImage.withTintColor(configuration.removeButtonTintColor)
+            }
+        }
+
         self.layer.cornerRadius = configuration.cornerRadius
         self.backgroundColor = configuration.backgroundColor
         self.layer.borderWidth = configuration.borderWidth
